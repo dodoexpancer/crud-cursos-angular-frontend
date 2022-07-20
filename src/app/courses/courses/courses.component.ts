@@ -18,7 +18,7 @@ import {
 
 
 export class CoursesComponent implements OnInit {
-  displayedColumns: string[] = ['name', 'category',];
+  displayedColumns: string[] = ['name', 'category', ];
   filmes$: Observable<Course[]>;
 
   constructor(

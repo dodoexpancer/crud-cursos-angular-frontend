@@ -2,7 +2,6 @@
   <mat-toolbar color="primary">Filmes Disponiveis</mat-toolbar>
   <div *ngIf="filmes$ | async as filmes; else loading">
     <table mat-table [dataSource]="filmes" class="mat-elevation-z8">
-
       <!-- Name Column -->
       <ng-container matColumnDef="name">
         <th mat-header-cell *matHeaderCellDef> Nome</th>
@@ -12,7 +11,10 @@
       <!-- Category Column -->
       <ng-container matColumnDef="category">
         <th mat-header-cell *matHeaderCellDef> Categoria</th>
-        <td mat-cell *matCellDef="let element"> {{element.category}} </td>
+        <td mat-cell *matCellDef="let element"> {{element.category}}
+          <mat-icon aria-hidden="false"
+                    aria-label="Categoria do Filme">{{ element.category | category }}</mat-icon>
+        </td>
       </ng-container>
 
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
